@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+	<meta charset="utf-8">
+    <title>Home Fort</title>
+    <script src="../js/aframe-v0.3.2.min.js"></script>
+    <script src="../js/aframe-teleport-controls.min.js"></script>
+    <script src="../js/aframe-gif-shader.min.js"></script>
+    <!--the bmfont component makes text possible! There are lots of other components made by the a-frame community that you can add in the head tag, and use. Lots of them are here: https://github.com/aframevr/awesome-aframe#components-->
+    <script src="../js/aframe-bmfont-text-component.min.js"></script>
+    <script src="../js/aframe-hyperlink.js"></script>
+    <link rel="icon" sizes="192x192" href="img/fort-icon.png">
+</head>
 <body>
 	<a-scene>
 		<a-assets>
-<!--.........................................................................................
-3D Models:.obj, .dae; Images:.jpg, .png (supports alpha transparency),.gif; 
-Sound: .mp3, .ogg; Video: .mp4-->
-			<a-asset-item 
-			id="example-tree-obj" src="../assets/3Dmodels/tree.obj"></a-asset-item>
-    		<a-asset-item id="example-tree-mtl" src="../assets/3Dmodels/tree.mtl"></a-asset-item>
-    		<a-asset-item id="round-gallery-2D" src="../assets/3Dmodels/round-gallery-2D.dae"></a-asset-item>
-    		<a-asset-item id="round-gallery-3D" src="../assets/3Dmodels/round-gallery-3D.dae"></a-asset-item>
-			<img id="gallery-img-placeholder" src="../assets/img/placeholder-image.png">
-			<a-asset-item id="example-sound" src="../assets/sounds/example-sound.mp3"></a-asset-item>
-			<video id="welcome-video" autoplay loop="true" src="welcome-to-your-fort.mp4">
+		<a-asset-item id="Icosphere-hollow" src="assets/3Dmodels/gallery-modules/Icosphere-hollow.dae"></a-asset-item>
+		<img id="gallery-img-placeholder" src="../assets/img/placeholder-image.png">
 		</a-assets>
 <!--.........................................................................................-->
-		<a-collada-model src="#round-gallery-2D"></a-collada-model>
-		<a-collada-model src="#round-gallery-3D"></a-collada-model>
+		<a-collada-model src="#Icosphere-hollow" scale="1 1 1" position="0 -1 -5"></a-collada-model>
 <!--.........................................................................................-->
-		<a-obj-model src="#example-tree-obj" mtl="#example-tree-mtl"></a-obj-model>
-		<a-entity id="example-sound"></a-entity>
-		<a-entity id="welcome-video"></a-entity>
+
+	<!-- Camera + cursor. -->
+    <a-camera id="camera" look-controls wasd-controls>
+          <a-ring cursor="fuse:false" raycaster="objects: .collidable; far: 4.5; near: 1; interval: 1000" class="reticle-cursor" opacity="0" color="#aaa"  radius-outer="0.01" radius-inner="0.008" position="0 0 -1">
+          </a-ring>
+    </a-camera>
+
+    <a-entity bmfont-text="text: ART FORTS; align: left; color: #000; width: 800;" position="0 0 -2" rotation="0 0 0" scale="2 2 2" rotation="-30 0 0"></a-entity>
+
+    <!--link to 12-sided gallery template-->
+	<a-entity class="collidable" position="0 0 0" rotation="30 30 0">
+		<a-entity bmfont-text="text: Gallery Template 1; align: center; color: #000; width: 320;" position="-0.4 1 -3.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+		<a-box href="pages/gallery-12-sided.html" material="shader:gif;src:url(assets/img/noise-1.gif); color:#0AA3A3; opacity:1" depth="0.2" height="1" width="1" position="0 1 -4"></a-box>
+	</a-entity>
+
+	    <!--link to sculpure stand template-->
+	<a-entity class="collidable" position="0 0 0" rotation="30 0 0">
+		<a-entity bmfont-text="text: Gallery Template 2; align: center; color: #000; width: 320;" position="-0.4 1 -3.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+		<a-box href="pages/gallery-sculptures.html" material="shader:gif;src:url(assets/img/noise-1.gif); color:#0AA3A3; opacity:1" depth="0.2" height="1" width="1" position="0 1 -4"></a-box>
+	</a-entity>
+
+	    <!--link to grassy circle template-->
+	<a-entity class="collidable" position="0 0 0" rotation="30 -30 0">
+		<a-entity bmfont-text="text: Gallery Template 3; align: center; color: #000; width: 320;" position="-0.4 1 -3.8" rotation="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+		<a-box href="pages/big-door-building.html" material="shader:gif;src:url(assets/img/noise-1.gif); color:#0AA3A3; opacity:1" depth="0.2" height="1" width="1" position="0 1 -4"></a-box>
+	</a-entity>
+s
+	<a-sky color="#B5305B"></a-sky>
 	</a-scene>
 </body>
- 
+  

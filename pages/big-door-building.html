@@ -1,5 +1,5 @@
 <!--.........................................................................................
- Here's a template.. please hack on it and make it interesting!!!
+ Here's a gallery template.. please hack on it and make it interesting!!!
 There are some comments in the code below, to help get you hacking.
 Full a-frame docs are here: https://aframe.io/docs
 Have fun!
@@ -8,7 +8,7 @@ Have fun!
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-    <title>2D Gallery Template</title>
+    <title>Big Door Building Template</title>
     <script src="../js/aframe-v0.3.2.min.js"></script>
     <script src="../js/aframe-teleport-controls.min.js"></script>
     <!--the bmfont component makes text possible! There are lots of other components made by the a-frame community that you can add in the head tag, and use. Lots of them are here: https://github.com/aframevr/awesome-aframe#components-->
@@ -25,70 +25,23 @@ Have fun!
 			3D Models:.obj, .dae; Images:.jpg, .png (supports alpha transparency),.gif; 
 			Sound: .mp3, .ogg; Video: .mp4
 			.........................................................................................-->
-    		<a-asset-item id="gallery-12-sided" src="../assets/3Dmodels/gallery-modules/12-sided-gallery-module.dae"></a-asset-item>
+    		<a-asset-item id="big-door-module" src="../assets/3Dmodels/gallery-modules/big-door-module.dae"></a-asset-item>
+    		<a-asset-item id="hexagonal-module" src="../assets/3Dmodels/gallery-modules/hexagonal-module.dae"></a-asset-item>
+    		<a-asset-item id="big-door-module" src="../assets/3Dmodels/gallery-modules/big-door-module.dae"></a-asset-item>
 			<img id="art-example" src="../assets/img/placeholder-image.png">
 			<img id="sky" src="../assets/img/sky-sphere-image.png">
 			<img id="clouds-image" src="../assets/img/clouds-image.png">
 		</a-assets>
 
 		<!--.........................................................................................
-		==GALLERY OF 2D STUFF==
-		It looks messy, but it's the same type of entity, repeated and rotated around the gallery model
+		==BUILDINGS==
+		Tabula rasa. Awaiting arts.
 		<3 <3 <3 <3 <3 <3 <3 <3
 		.........................................................................................-->
-		<a-collada-model src="#gallery-12-sided" scale="2 2 2"></a-collada-model>
+		<a-collada-model src="#big-door-module" scale="2 2 2" position="5 0 -4"></a-collada-model>
+		<a-collada-model src="#hexagonal-module" scale="2 2 2" position="0 0 12"></a-collada-model>
 
 		<a-plane color="#000" height="50" width="50" rotation="-90 0 0" position="0 -0.2 0"></a-plane>
-
-		<!--nested child entities inherit transform from parent. Here, the parent gives a center point and rotation around that center point. The child entity nested inside gives a distance from that center point.-->
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 -30 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
-			<!--add text caption here-->
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 -60 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 -120 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 -150 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 150 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 120 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 60 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
-
-		<a-entity class="rotate-art" position="0 0 0" rotation="0 30 0">
-			<!-- put art here using the img #id -->
-			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
-			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
-		</a-entity>
 
 		<!--.........................................................................................
 		==SKYBOX!==
