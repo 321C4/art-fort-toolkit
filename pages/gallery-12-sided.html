@@ -1,0 +1,116 @@
+<!--.........................................................................................
+ Here's a super-boring gallery template.. please hack on it and make it interesting!!!
+There are some comments in the code below, to help get you hacking.
+Full a-frame docs are here: https://aframe.io/docs
+Have fun!
+.........................................................................................-->
+
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+    </style>
+    <script src="../js/aframe-v0.3.2.min.js"></script>
+    <script src="../js/aframe-teleport-controls.min.js"></script>
+    <!--the bmfont component makes text possible! There are lots of other components made by the a-frame community that you can add in the head tag, and use. Lots of them are here: https://github.com/aframevr/awesome-aframe#components-->
+    <script src="../js/aframe-bmfont-text-component.min.js"></script>
+    <script src="../js/aframe-hyperlink.js"></script>
+    <link rel="icon" sizes="192x192" href="img/si-icon.png">
+</head>
+<body>
+	<a-scene>
+		<a-assets>
+			<!--.........................................................................................
+			Pre-load assets here! (It speeds up the site, and is easier to manage than inline assets)
+			==FORMATS== 
+			3D Models:.obj, .dae; Images:.jpg, .png (supports alpha transparency),.gif; 
+			Sound: .mp3, .ogg; Video: .mp4
+			.........................................................................................-->
+    		<a-asset-item id="gallery-12-sided" src="../assets/3Dmodels/gallery-modules/12-sided-gallery-module.dae"></a-asset-item>
+			<img id="art-example" src="../assets/img/placeholder-image.png">
+			<img id="sky" src="../assets/img/sky-sphere-image.png">
+			<img id="clouds-image" src="../assets/img/clouds-image.png">
+		</a-assets>
+
+		<!--.........................................................................................
+		==GALLERY OF 2D STUFF==
+		It looks messy, but it's the same type of entity, repeated and rotated around the gallery model
+		<3 <3 <3 <3 <3 <3 <3 <3
+		.........................................................................................-->
+		<a-collada-model src="#gallery-12-sided" scale="2 2 2"></a-collada-model>
+
+		<a-plane color="#000" height="50" width="50" rotation="-90 0 0" position="0 -0.2 0"></a-plane>
+
+		<!--nested child entities inherit transform from parent. Here, the parent gives a center point and rotation around that center point. The child entity nested inside gives a distance from that center point.-->
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 -30 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
+			<!--add text caption here-->
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 -60 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 -120 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 -150 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 150 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 120 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 60 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="2" height="2" position="0 2 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<a-entity class="rotate-art" position="0 0 0" rotation="0 30 0">
+			<!-- put art here using the img #id -->
+			<a-image src="#art-example" width="1" height="1" position="0 1.5 -7.5"></a-image>
+			<a-entity bmfont-text="text: Example Title, medium,  date; align: center; color: #ffffff; width: 320;" position="-0.4 0.6 -7.5" scale="0.5 0.5 0.5"></a-entity>
+		</a-entity>
+
+		<!--.........................................................................................
+		==SKYBOX!==
+		Actually a sphere.. This is an interesting thing to make in Photoshop - use 16:9 aspect ratio, and do Filter>>Other>>Offset horizontally, to hide the seam! Equirectangular (360 mapped to a rectangle) images also work. 
+		.........................................................................................-->
+		<a-sky src="#sky"></a-sky>
+		<!-- Let's be fancy: here's a big sphere with clouds on a transparent background. All kinds of wacky stuff can be done with transparent pngs...results may vary by browser, however. -->
+		<a-sphere material="src: #clouds-image; side: back" Opacity="0.8" radius="100">
+			<a-animation attribute="rotation"
+               dur="1500000"
+               fill="forwards"
+               to="0 360 0"
+               easing="linear"
+               repeat="indefinite"></a-animation>
+		</a-sphere>
+
+		<!--.........................................................................................
+		==LIGHTS==
+		.........................................................................................-->
+		<a-entity light="type: ambient; color: #ADAAD5"></a-entity>
+		<a-entity light="type: directional; color: #FFFFFF; intensity: 0.6" position="0 10 0" rotation="-90 0 0"></a-entity>
+		<a-entity light="type: point; color: #E89C8D; intensity: 0.6" position="10 -3 10"></a-entity>
+
+	</a-scene>
+</body>
